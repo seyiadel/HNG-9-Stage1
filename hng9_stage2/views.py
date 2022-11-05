@@ -28,17 +28,17 @@ class Task(APIView):
         if operation == 'addition':
             return JsonResponse(data={"slackUsername":"seyiadel",
                                 "operation_type":"addition",
-                                'results': Evaluate.add(x,y)})
+                                'result': Evaluate.add(x,y)})
         elif operation == 'subtraction':
             return JsonResponse(data={"slackUsername":"seyiadel",
                                 "operation_type":"subtraction",
-                                'results': Evaluate.subtract(x,y)})
+                                'result': Evaluate.subtract(x,y)})
         elif operation == 'multiplication':
             return JsonResponse(data={"slackUsername":"seyiadel",
                                 "operation_type":"multiplication",
-                                'results': Evaluate.multiply(x,y)})
+                                'result': Evaluate.multiply(x,y)})
         else:
             return JsonResponse(data={"slackUsername":"seyiadel",
                                 "operation_type":"Operation_type do not exist",
-                                'results': "No Results"})
+                                'result': "No Results"})
     return JsonResponse(data=serializer.errors,status=status.HTTP_400_BAD_REQUEST)
