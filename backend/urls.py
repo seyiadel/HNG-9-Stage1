@@ -16,7 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from hng9intern.views import Intern_Information
+from hng9_stage2.views import  Task
+
 urlpatterns = [
     path("admin/", admin.site.urls),
-    path('',Intern_Information.as_view(), name='intern')
+    path('',Intern_Information.as_view(), name='intern'),
+    path('task/', Task.as_view(), name='task')
 ]
